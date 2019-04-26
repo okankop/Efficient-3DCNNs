@@ -140,31 +140,7 @@ if __name__ == '__main__':
         assert opt.arch == checkpoint['arch']
         best_prec1 = checkpoint['best_prec1']
         opt.begin_epoch = checkpoint['epoch']
-        # model.load_state_dict(checkpoint['state_dict'])
-
-
-        ########## HACKING #############
-        model_dict = model.state_dict()
-        # 1. filter out unnecessary keys
-        checkpoint_dict = {k: v for k, v in checkpoint['state_dict'].items() if k in model_dict} 
-        # 2. overwrite entries in the existing state dict
-        model_dict.update(checkpoint_dict) 
-        # 3. load the new state dict
-        model.load_state_dict(checkpoint_dict)
-        state = {
-                'epoch': checkpoint['epoch'],
-                'arch': checkpoint['arch'],
-                'state_dict': model.state_dict(),
-                'optimizer': checkpoint['state_dict'],
-                'best_prec1': checkpoint['best_prec1']
-                }
-        torch.save(state, opt.resume_path)
-        #model.load_state_dict(checkpoint['state_dict'])
-        ########## END OF HACKING #######
-
-        #if not opt.no_train:
-        #    optimizer.load_state_dict(checkpoint['optimizer'])
-
+        model.load_state_dict(checkpoint['state_dict'])
 
     print('run')
     for i in range(opt.begin_epoch, opt.n_epochs + 1):
