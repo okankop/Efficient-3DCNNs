@@ -1,7 +1,7 @@
 python main.py --root_path ~/ \
 	--video_path ~/datasets/jester \
-	--annotation_path MyRes3D_cleaned/annotation_Jester/jester.json \
-	--result_path MyRes3D_cleaned/results \
+	--annotation_path Efficient-3DCNNs/annotation_Jester/jester.json \
+	--result_path Efficient-3DCNNs/results \
 	--dataset jester \
 	--n_classes 27 \
 	--model mobilenet \
