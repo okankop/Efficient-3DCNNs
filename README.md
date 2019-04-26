@@ -89,6 +89,10 @@ python main.py --root_path ~/ \
 	--n_val_samples 1 \
 ```
 
+### Calculating Video Accuracy
+
+In order to calculate viceo accuracy, you should first run the models with '--test' mode in order to create 'val.json'. Then, you need to run 'video_accuracy.py' in utils folder to calculate video accuracies. 
+
 ## Citation
 
 Please cite the following article if you use this code or pre-trained models:
