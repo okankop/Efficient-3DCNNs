@@ -1,4 +1,4 @@
-'''ShuffleNetV2 in PyTorch.
+'''SqueezeNet in PyTorch.
 
 See the paper "SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size" for more details.
 '''
