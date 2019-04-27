@@ -10,7 +10,7 @@ PyTorch Implementation of the article "[Resource Efficient 3D Convolutional Neur
 
 ## Pre-trained models
 
-Codes and pretrained models will be added soon !!!
+Pretrained models can be downloaded from [here](https://drive.google.com/open?id=1eggpkmy_zjb62Xra6kQviLa67vzP_FR8).
 
 ## Dataset Preparation
 
@@ -92,6 +92,10 @@ python main.py --root_path ~/ \
 ### Calculating Video Accuracy
 
 In order to calculate viceo accuracy, you should first run the models with '--test' mode in order to create 'val.json'. Then, you need to run 'video_accuracy.py' in utils folder to calculate video accuracies. 
+
+### Calculating FLOPs
+
+In order to calculate FLOPs, run the file 'calculate_FLOP.py'. You need to fist uncomment the desired model in the file. 
 
 ## Citation
 
