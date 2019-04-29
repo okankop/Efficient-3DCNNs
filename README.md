@@ -70,6 +70,7 @@ python utils/ucf101_json.py annotation_dir_path
 
 Please check all the 'Resource efficient 3D CNN models' in models folder and run the code by providing the necessary parameters. An example run is given as follows:
 
+- Training from scratch:
 ```bash
 python main.py --root_path ~/ \
 	--video_path ~/datasets/jester \
@@ -88,6 +89,59 @@ python main.py --root_path ~/ \
 	--checkpoint 1 \
 	--n_val_samples 1 \
 ```
+
+- Resuming training from a checkpoint:
+```bash
+python main.py --root_path ~/ \
+	--video_path ~/datasets/jester \
+	--annotation_path Efficient-3DCNNs/annotation_Jester/jester.json \
+	--result_path Efficient-3DCNNs/results \
+	--resume_path Efficient-3DCNNs/results/jester_shufflenet_0.5x_G3_RGB_16_best.pth \
+	--dataset jester \
+	--n_classes 27 \
+	--model shufflenet \
+	--groups 3 \
+	--width_mult 0.5 \
+	--train_crop random \
+	--learning_rate 0.1 \
+	--sample_duration 16 \
+	--downsample 2 \
+	--batch_size 64 \
+	--n_threads 16 \
+	--checkpoint 1 \
+	--n_val_samples 1 \
+```
+
+
+- Training from a pretrained model. Use '--ft_portion' and select 'complete' or 'last_layer' for the fine tuning:
+```bash
+python main.py --root_path ~/ \
+	--video_path ~/datasets/jester \
+	--annotation_path Efficient-3DCNNs/annotation_UCF101/ucf101_01.json \
+	--result_path Efficient-3DCNNs/results \
+	--pretrain_path Efficient-3DCNNs/results/kinetics_shufflenet_0.5x_G3_RGB_16_best.pth \
+	--dataset ucf101 \
+	--n_classes 600 \
+	--n_finetune_classes 101 \
+	--ft_portion last_layer \
+	--model shufflenet \
+	--groups 3 \
+	--width_mult 0.5 \
+	--train_crop random \
+	--learning_rate 0.1 \
+	--sample_duration 16 \
+	--downsample 2 \
+	--batch_size 64 \
+	--n_threads 16 \
+	--checkpoint 1 \
+	--n_val_samples 1 \
+```
+
+### Augmentations
+
+There are several augmentation techniques available. Please check spatial_transforms.py and temporal_transforms.py for the details of the augmentation methods.
+
+Note: Do not use "RandomHorizontalFlip" for trainings of Jester dataset, as it alters the class type of some classes (e.g. Swipe_Left --> RandomHorizontalFlip() --> Swipe_Right)
 
 ### Calculating Video Accuracy
 
