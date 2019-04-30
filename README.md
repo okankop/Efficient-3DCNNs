@@ -12,6 +12,10 @@ PyTorch Implementation of the article "[Resource Efficient 3D Convolutional Neur
 
 Pretrained models can be downloaded from [here](https://drive.google.com/open?id=1eggpkmy_zjb62Xra6kQviLa67vzP_FR8).
 
+## Results
+
+<p align="center"><img src="https://github.com/okankop/Efficient-3DCNNs/blob/master/utils/results_Eff_3DCNNs.jpg" align="middle" width="900" title="Results of Efficient 3DCNNs" /></p>
+
 ## Dataset Preparation
 
 ### Kinetics
