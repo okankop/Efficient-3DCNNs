@@ -1,5 +1,5 @@
 # Efficient-3DCNNs
-PyTorch Implementation of the article "[Resource Efficient 3D Convolutional Neural Networks]()", codes and pretrained models.
+PyTorch Implementation of the article "[Resource Efficient 3D Convolutional Neural Networks](https://arxiv.org/pdf/1904.02422.pdf)", codes and pretrained models.
 
 ## Requirements
 
