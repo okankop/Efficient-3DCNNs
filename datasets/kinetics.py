@@ -49,10 +49,6 @@ def video_loader(video_dir_path, frame_indices, sample_duration, image_loader):
             pil_frame = Image.fromarray(frame)
             video.append(pil_frame)
         else:
-            # print(_)
-            # print(frame_indices[0])
-            # print("Could not load frame")
-            # print(video_dir_path)
             break
 
     cap.release()
@@ -60,12 +56,13 @@ def video_loader(video_dir_path, frame_indices, sample_duration, image_loader):
 
     # Loop as many times for short videos
     for frame in video:
-            if len(video) >= sample_duration:
-                break
-            video.append(frame)
+        if len(video) >= sample_duration:
+            break
+        video.append(frame)
     
-    if len(video) == 0:
-        print(video_dir_path)
+    if len(video) == 0: # give an empty clip
+        for _ in range(sample_duration):
+            video.append(Image.new('RGB', (320, 180)))
 
     return video
 
