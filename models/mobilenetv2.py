@@ -132,11 +132,11 @@ class MobileNetV2(nn.Module):
                 m.bias.data.zero_()
 
 
-def get_fine_tuning_parameters(model, ft_potion):
-    if ft_potion == "complete":
+def get_fine_tuning_parameters(model, ft_portion):
+    if ft_portion == "complete":
         return model.parameters()
 
-    elif ft_potion == "last_layer":
+    elif ft_portion == "last_layer":
         ft_module_names = []
         ft_module_names.append('classifier')
 
@@ -151,7 +151,7 @@ def get_fine_tuning_parameters(model, ft_potion):
         return parameters
 
     else:
-        raise ValueError("Unsupported ft_potion: 'complete' or 'last_layer' expected")
+        raise ValueError("Unsupported ft_portion: 'complete' or 'last_layer' expected")
 
     
 def get_model(**kwargs):
