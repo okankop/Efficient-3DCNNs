@@ -88,11 +88,11 @@ class C3D(nn.Module):
         return out
 
 
-def get_fine_tuning_parameters(model, ft_potion):
-    if ft_potion == "complete":
+def get_fine_tuning_parameters(model, ft_portion):
+    if ft_portion == "complete":
         return model.parameters()
 
-    elif ft_potion == "last_layer":
+    elif ft_portion == "last_layer":
         ft_module_names = []
         ft_module_names.append('fc')
 
