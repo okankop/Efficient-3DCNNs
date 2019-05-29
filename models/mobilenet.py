@@ -93,7 +93,7 @@ def get_fine_tuning_parameters(model, ft_portion):
         return parameters
 
     else:
-        raise ValueError("Unsupported ft_potion: 'complete' or 'last_layer' expected")
+        raise ValueError("Unsupported ft_portion: 'complete' or 'last_layer' expected")
     
 
 def get_model(**kwargs):
