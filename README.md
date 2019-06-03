@@ -143,7 +143,7 @@ python main.py --root_path ~/ \
 	--train_crop random \
 	--learning_rate 0.1 \
 	--sample_duration 16 \
-	--downsample 2 \
+	--downsample 1 \
 	--batch_size 64 \
 	--n_threads 16 \
 	--checkpoint 1 \
