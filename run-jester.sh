@@ -1,3 +1,4 @@
+
 python main.py --root_path ~/ \
 	--video_path ~/datasets/jester \
 	--annotation_path Efficient-3DCNNs/annotation_Jester/jester.json \
@@ -18,4 +19,3 @@ python main.py --root_path ~/ \
 	# --no_train \
  	# --no_val \
  	# --test
-

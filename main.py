@@ -126,7 +126,7 @@ if __name__ == '__main__':
             opt, spatial_transform, temporal_transform, target_transform)
         val_loader = torch.utils.data.DataLoader(
             validation_data,
-            batch_size=32,
+            batch_size=16,
             shuffle=False,
             num_workers=opt.n_threads,
             pin_memory=True)
@@ -141,6 +141,7 @@ if __name__ == '__main__':
         best_prec1 = checkpoint['best_prec1']
         opt.begin_epoch = checkpoint['epoch']
         model.load_state_dict(checkpoint['state_dict'])
+
 
     print('run')
     for i in range(opt.begin_epoch, opt.n_epochs + 1):
@@ -187,7 +188,7 @@ if __name__ == '__main__':
                                  target_transform)
         test_loader = torch.utils.data.DataLoader(
             test_data,
-            batch_size=opt.batch_size,
+            batch_size=16,
             shuffle=False,
             num_workers=opt.n_threads,
             pin_memory=True)

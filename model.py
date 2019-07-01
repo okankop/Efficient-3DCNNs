@@ -1,11 +1,11 @@
 import torch
 from torch import nn
 
-from models import c3d, squeezenet, mobilenet, shufflenet, mobilenetv2, shufflenetv2
+from models import c3d, squeezenet, mobilenet, shufflenet, mobilenetv2, shufflenetv2, resnext, resnet
 
 
 def generate_model(opt):
-    assert opt.model in ['c3d', 'squeezenet', 'mobilenet', 
+    assert opt.model in ['c3d', 'squeezenet', 'mobilenet', 'resnext', 'resnet',
                          'shufflenet', 'mobilenetv2', 'shufflenetv2']
 
 
@@ -46,6 +46,75 @@ def generate_model(opt):
             num_classes=opt.n_classes,
             sample_size=opt.sample_size,
             width_mult=opt.width_mult)
+    elif opt.model == 'resnext':
+        assert opt.model_depth in [50, 101, 152]
+        from models.resnext import get_fine_tuning_parameters
+        if opt.model_depth == 50:
+            model = resnext.resnet50(
+                num_classes=opt.n_classes,
+                shortcut_type=opt.resnet_shortcut,
+                cardinality=opt.resnext_cardinality,
+                sample_size=opt.sample_size,
+                sample_duration=opt.sample_duration)
+        elif opt.model_depth == 101:
+            model = resnext.resnet101(
+                num_classes=opt.n_classes,
+                shortcut_type=opt.resnet_shortcut,
+                cardinality=opt.resnext_cardinality,
+                sample_size=opt.sample_size,
+                sample_duration=opt.sample_duration)
+        elif opt.model_depth == 152:
+            model = resnext.resnet152(
+                num_classes=opt.n_classes,
+                shortcut_type=opt.resnet_shortcut,
+                cardinality=opt.resnext_cardinality,
+                sample_size=opt.sample_size,
+                sample_duration=opt.sample_duration)
+    elif opt.model == 'resnet':
+        assert opt.model_depth in [10, 18, 34, 50, 101, 152, 200]
+        from models.resnet import get_fine_tuning_parameters
+        if opt.model_depth == 10:
+            model = resnet.resnet10(
+                num_classes=opt.n_classes,
+                shortcut_type=opt.resnet_shortcut,
+                sample_size=opt.sample_size,
+                sample_duration=opt.sample_duration)
+        elif opt.model_depth == 18:
+            model = resnet.resnet18(
+                num_classes=opt.n_classes,
+                shortcut_type=opt.resnet_shortcut,
+                sample_size=opt.sample_size,
+                sample_duration=opt.sample_duration)
+        elif opt.model_depth == 34:
+            model = resnet.resnet34(
+                num_classes=opt.n_classes,
+                shortcut_type=opt.resnet_shortcut,
+                sample_size=opt.sample_size,
+                sample_duration=opt.sample_duration)
+        elif opt.model_depth == 50:
+            model = resnet.resnet50(
+                num_classes=opt.n_classes,
+                shortcut_type=opt.resnet_shortcut,
+                sample_size=opt.sample_size,
+                sample_duration=opt.sample_duration)
+        elif opt.model_depth == 101:
+            model = resnet.resnet101(
+                num_classes=opt.n_classes,
+                shortcut_type=opt.resnet_shortcut,
+                sample_size=opt.sample_size,
+                sample_duration=opt.sample_duration)
+        elif opt.model_depth == 152:
+            model = resnet.resnet152(
+                num_classes=opt.n_classes,
+                shortcut_type=opt.resnet_shortcut,
+                sample_size=opt.sample_size,
+                sample_duration=opt.sample_duration)
+        elif opt.model_depth == 200:
+            model = resnet.resnet200(
+                num_classes=opt.n_classes,
+                shortcut_type=opt.resnet_shortcut,
+                sample_size=opt.sample_size,
+                sample_duration=opt.sample_duration)
 
 
 
