@@ -1,6 +1,10 @@
 # Efficient-3DCNNs
 PyTorch Implementation of the article "[Resource Efficient 3D Convolutional Neural Networks](https://arxiv.org/pdf/1904.02422.pdf)", codes and pretrained models.
 
+## Update!
+
+3D ResNet and 3D ResNeXt models are added! The details of these models can be found in [link](https://arxiv.org/pdf/1711.09577.pdf).
+
 ## Requirements
 
 * [PyTorch 1.0.1.post2](http://pytorch.org/)
@@ -80,6 +84,20 @@ python utils/ucf101_json.py annotation_dir_path
 
 
 ## Running the code
+
+Model configurations are given as follows:
+
+```misc
+ShuffleNetV1-1.0x : --model shufflenet   --width_mult 1.0 --groups 3
+ShuffleNetV2-1.0x : --model shufflenetv2 --width_mult 1.0
+MobileNetV1-1.0x  : --model mobilenet    --width_mult 1.0
+MobileNetV2-1.0x  : --model mobilenetv2  --width_mult 1.0 
+SqueezeNet	  : --model squeezenet --version 1.1
+ResNet-18	  : --model resnet  --model_depth 18  --resnet_shortcut A
+ResNet-50	  : --model resnet  --model_depth 50  --resnet_shortcut B
+ResNet-101	  : --model resnet  --model_depth 101 --resnet_shortcut B
+ResNeXt-101	  : --model resnext --model_depth 101 --resnet_shortcut B --resnext_cardinality 32
+```
 
 Please check all the 'Resource efficient 3D CNN models' in models folder and run the code by providing the necessary parameters. An example run is given as follows:
 
