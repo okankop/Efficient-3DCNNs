@@ -62,12 +62,10 @@ class C3D(nn.Module):
         last_size = int(math.ceil(sample_size / 32))
         self.fc1 = nn.Sequential(
             nn.Linear((512 * last_duration * last_size * last_size) , 4096),
-            nn.BatchNorm1d(4096),
             nn.ReLU(),
             nn.Dropout(0.5))
         self.fc2 = nn.Sequential(
             nn.Linear(4096, 4096),
-            nn.BatchNorm1d(4096),
             nn.ReLU(),
             nn.Dropout(0.5))
         self.fc = nn.Sequential(
