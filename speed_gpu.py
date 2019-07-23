@@ -4,8 +4,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
 
+import pdb
+
 from utils import AverageMeter, calculate_accuracy
-from models import squeezenet, shufflenetv2, shufflenet, mobilenet, mobilenetv2, c3d
+from models import squeezenet, shufflenetv2, shufflenet, mobilenet, mobilenetv2, c3d, resnet, resnext
 
 # model = shufflenet.get_model(groups=3, width_mult=0.5, num_classes=600)#1
 # model = shufflenetv2.get_model( width_mult=0.25, num_classes=600, sample_size = 112)#2
@@ -23,7 +25,12 @@ from models import squeezenet, shufflenetv2, shufflenet, mobilenet, mobilenetv2,
 # model = shufflenetv2.get_model( width_mult=2.0, num_classes=600, sample_size = 112)#14
 # model = mobilenet.get_model( width_mult=2.0, num_classes=600, sample_size = 112)#15
 # model = mobilenetv2.get_model( width_mult=1.0, num_classes=600, sample_size = 112)#16
-model = squeezenet.get_model( version=1.1, num_classes=600, sample_size = 112, sample_duration = 8)
+# model = squeezenet.get_model( version=1.1, num_classes=600, sample_size = 112, sample_duration = 8)
+# model = resnet.resnet18(sample_size = 112, sample_duration = 8, num_classes=600)
+# model = resnet.resnet50(sample_size = 112, sample_duration = 8, num_classes=600)
+# model = resnet.resnet101(sample_size = 112, sample_duration = 8, num_classes=600)
+model = resnext.resnext101(sample_size = 112, sample_duration = 8, num_classes=600)
+
 model = model.cuda()
 model = nn.DataParallel(model, device_ids=None)	
 print(model)
