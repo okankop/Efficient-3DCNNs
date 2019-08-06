@@ -23,6 +23,12 @@ Implemented models:
  - 3D MobileNetv2
  - 3D ShuffleNetv2
  
+ For state-of-the-art comparison, the following models are also evaluated:
+ - ResNet-18
+ - ResNet-50
+ - ResNet-101
+ - ResNext-101
+ 
  All models (except for SqueezeNet) are evaluated for 4 different complexity levels by adjusting their 'width_multiplier' with 2 different hardware platforms.
 
 ## Results
