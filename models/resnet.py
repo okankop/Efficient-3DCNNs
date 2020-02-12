@@ -197,7 +197,7 @@ def get_fine_tuning_parameters(model, ft_portion):
 
     elif ft_portion == "last_layer":
         ft_module_names = []
-        ft_module_names.append('classifier')
+        ft_module_names.append('fc')
 
         parameters = []
         for k, v in model.named_parameters():
