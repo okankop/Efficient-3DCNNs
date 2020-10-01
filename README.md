@@ -193,13 +193,15 @@ In order to calculate FLOPs, run the file 'calculate_FLOP.py'. You need to fist 
 Please cite the following article if you use this code or pre-trained models:
 
 ```bibtex
-@article{kopuklu2019resource,
-  title={Driver Anomaly Detection: A Dataset and Contrastive Learning Approach},
-  author={K{\"o}p{\"u}kl{\"u}, Okan and Zheng, Jiapeng and Xu, Hang and Rigoll, Gerhard},
-  journal={arXiv preprint arXiv:2009.14660},
-  year={2020}
+@inproceedings{kopuklu2019resource,
+  title={Resource efficient 3d convolutional neural networks},
+  author={K{\"o}p{\"u}kl{\"u}, Okan and Kose, Neslihan and Gunduz, Ahmet and Rigoll, Gerhard},
+  booktitle={2019 IEEE/CVF International Conference on Computer Vision Workshop (ICCVW)},
+  pages={1910--1919},
+  year={2019},
+  organization={IEEE}
 }
 ```
 
 ## Acknowledgement
-We thank Kensho Hara for releasing his [codebase](https://github.com/HobbitLong/CMC), which we build our work on top.
+We thank Kensho Hara for releasing his [codebase](https://github.com/kenshohara/3D-ResNets-PyTorch), which we build our work on top.
