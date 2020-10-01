@@ -194,12 +194,12 @@ Please cite the following article if you use this code or pre-trained models:
 
 ```bibtex
 @article{kopuklu2019resource,
-  title={Resource Efficient 3D Convolutional Neural Networks},
-  author={K{\"o}p{\"u}kl{\"u}, Okan and Kose, Neslihan and Gunduz, Ahmet and Rigoll, Gerhard},
-  journal={arXiv preprint arXiv:1904.02422},
-  year={2019}
+  title={Driver Anomaly Detection: A Dataset and Contrastive Learning Approach},
+  author={K{\"o}p{\"u}kl{\"u}, Okan and Zheng, Jiapeng and Xu, Hang and Rigoll, Gerhard},
+  journal={arXiv preprint arXiv:2009.14660},
+  year={2020}
 }
 ```
 
 ## Acknowledgement
-We thank Kensho Hara for releasing his [codebase](https://github.com/kenshohara/3D-ResNets-PyTorch), which we build our work on top.
+We thank Kensho Hara for releasing his [codebase](https://github.com/HobbitLong/CMC), which we build our work on top.
