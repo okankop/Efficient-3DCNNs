@@ -5,7 +5,7 @@ from torch.autograd import Variable
 import math
 from functools import partial
 
-__all__ = ['ResNeXt', 'resnet50', 'resnet101']
+__all__ = ['ResNeXt', 'resnext50', 'resnext101', 'resnext152']
 
 
 def conv3x3x3(in_planes, out_planes, stride=1):
