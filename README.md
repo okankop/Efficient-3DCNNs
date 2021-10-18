@@ -33,7 +33,7 @@ Implemented models:
 
 ## Results
 
-<p align="center"><img src="https://github.com/okankop/Efficient-3DCNNs/blob/master/utils/results.jpg" align="middle" width="900" title="Results of Efficient 3DCNNs" /></p>
+<p align="center"><img src="https://github.com/okankop/Efficient-3DCNNs/blob/master/utils/results.png" align="middle" width="900" title="Results of Efficient 3DCNNs" /></p>
 
 ## Dataset Preparation
 
