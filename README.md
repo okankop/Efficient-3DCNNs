@@ -68,7 +68,7 @@ python utils/jester_json.py annotation_dir_path
 
 ### UCF-101
 
-* Download videos and train/test splits [here](http://crcv.ucf.edu/data/UCF101.php).
+* Download videos and train/test splits [here](https://www.crcv.ucf.edu/data/UCF101.php).
 * Convert from avi to jpg files using ```utils/video_jpg_ucf101_hmdb51.py```
 
 ```bash
