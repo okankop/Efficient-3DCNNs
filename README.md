@@ -186,7 +186,7 @@ In order to calculate viceo accuracy, you should first run the models with '--te
 
 ### Calculating FLOPs
 
-In order to calculate FLOPs, run the file 'calculate_FLOP.py'. You need to fist uncomment the desired model in the file. 
+In order to calculate FLOPs, run the file 'calculate_FLOP.py'. You need to first uncomment the desired model in the file. 
 
 ## Citation
 
